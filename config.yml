@@ -1,22 +1,36 @@
 version: 1
 validation: sovereign
+init:
+  home: "~/.blog"
 accounts: 
-- name: alice
+- name: user1
   coins:
   - 20000token
   - 200000000stake
-- name: bob
+- name: user2
   coins:
   - 10000token
   - 100000000stake
+- name: user3
+  coins:
+  - 30000token
+  - 300000000stake
+- name: user4
+  coins:
+  - 40000token
+  - 50000000stake
+- name: user5
+  coins:
+  - 50000token
+  - 40000000stake
 client:
   openapi:
     path: docs/static/openapi.yml
 faucet:
-  name: bob
+  name: user5
   coins:
   - 5token
-  - 100000stake
+  - 100000stake 
 validators:
-- name: alice
+- name: user1
   bonded: 100000000stake
