@@ -1,0 +1,52 @@
+version: 1
+validation: sovereign
+init:
+  home: "~/.blog-user5"
+accounts: 
+- name: user1
+  coins:
+  - 20000token
+  - 200000000stake
+- name: user2
+  coins:
+  - 20000token
+  - 300000000stake
+- name: user3
+  coins:
+  - 20000token
+  - 180000000stake
+- name: user4
+  coins:
+  - 20000token
+  - 170000000stake
+- name: user5
+  coins:
+  - 20000token
+  - 1400000000stake
+client:
+  openapi:
+    path: docs/static/openapi.yml
+validators:
+- name: user5
+  bonded: 1400000000stake
+  home: "~/.blog-user5"
+  app:
+    minimum-gas-prices: "0.5stake"
+    config:
+      consensus:
+        timeout_commit: "5s"
+        timeout_propose: "5s"
+    api:
+      address: :1320
+    grpc:
+      address: :9098
+    grpc-web:
+      address: :9099
+  config:
+    p2p:
+      laddr: :26664
+    rpc:
+      laddr: :26665
+      pprof_laddr: :6064
+    client:
+      output: "json"

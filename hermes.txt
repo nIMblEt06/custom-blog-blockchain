@@ -1,0 +1,10 @@
+./blogd tx blog create-post "A post from User 2 with gas 200000stake" "200000stake is being sent as the fees for this transaction. A lot of content is being added in the body as well. This user2 wants to talk even more. There is no loss of words in this blog post on the blockchain" \
+  --gas 30stake \
+  --from user2 \
+  --home ~/.blog-user2
+
+  ./blogd tx blog create-post "A post from User 2 with gas 200000stake" "200000stake is being sent as the fees for this transaction. A lot of content is being added in the body as well. This user2 wants to talk even more. There is no loss of words in this blog post on the blockchain" \
+  --node "tcp://localhost:26657" \
+  --gas 300000stake \
+  --from user2 \
+  --home ~/.blog-user2
